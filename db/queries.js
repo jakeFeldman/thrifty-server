@@ -68,6 +68,7 @@ module.exports = {
         .then(result => {
           return knex('account').where('id', seller_id).first()
           .then(user => {
+            console.log(user);
             user.total_sales += 1;
             return knex('account').update({
               total_sales: user.total_sales
